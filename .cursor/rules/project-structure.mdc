@@ -1,0 +1,19 @@
+# Project Structure and Tech Stack
+
+This project is a modern React 19 + TypeScript application using Vite, Tailwind CSS, Redux Toolkit, React Router DOM, Framer Motion, and React Icons.
+
+- Main entry point: [src/main.tsx](mdc:src/main.tsx)
+- App root: [src/App.tsx](mdc:src/App.tsx)
+- Tailwind config: [tailwind.config.js](mdc:tailwind.config.js) or [tailwind.config.cjs](mdc:tailwind.config.cjs)
+- Vite config: [vite.config.ts](mdc:vite.config.ts)
+- Redux store: [src/store/](mdc:src/store/)
+- Type definitions: [src/types/](mdc:src/types/)
+- Template config: [src/config/templates/](mdc:src/config/templates/)
+- Assets: [public/](mdc:public/)
+
+Follow the folder structure and technology stack as described in [instructions.txt](mdc:instructions.txt).
+description:
+globs:
+alwaysApply: false
+
+---

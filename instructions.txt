@@ -1,0 +1,78 @@
+# Cursor Rules for AI Agent Project
+
+## Tech Stack
+- Use React 19 + TypeScript (with Vite) as the base framework.
+- Use Tailwind CSS for styling and layout.
+- Use Redux Toolkit for state management.
+- Use React Router DOM for routing.
+- Use Framer Motion for animations.
+- Use React Icons for iconography.
+
+## Folder Structure
+- Follow the structure:
+  - src/components/ui/ for reusable UI components
+  - src/components/LandingPage.tsx for the landing screen
+  - src/components/ChatWindow.tsx for the main agent interface
+  - src/components/Conversation.tsx for chat message display
+  - src/config/templates/ for template configurations
+  - src/store/appSlice.ts and conversationSlice.ts for Redux slices
+  - src/types/Template.ts and Message.ts for type definitions
+  - src/assets/videos/, images/, logos/ for assets
+
+## Coding Standards
+- Use TypeScript for all code.
+- Keep code modular, clean, and extensible.
+- Use mock data only (no real chat/voice logic).
+- Emphasize animation polish and responsiveness.
+- Separate style and content via template config files.
+- Ensure all components are mobile-first and responsive.
+- Avoid console warnings and TypeScript errors.
+
+## Success Criteria
+- App compiles with no TypeScript errors.
+- Landing page and chat page are functional.
+- Animations are smooth (Framer Motion).
+- Mobile responsiveness is verified.
+- Voice UI states (mock) are working.
+- Video transitions and routing function correctly.
+- No console warnings or crashes.
+
+## Developer Notes
+- Focus on user journey: video → chat → interaction flow.
+- Use mock data for all agent/chat/voice features.
+- Reference https://agent.amplitech.ai/97aa9640-6164-468b-8a21-116a9e82202c for sample assets and UI inspiration.
+- README.md must include clear setup instructions (Vite, install, run).
+- Push the full project to GitHub and provide a screen recording walkthrough upon completion.
+
+# Additional Cursor Rules: Reference UI Flow and Details
+
+## UI Flow (Match Reference Exactly)
+- The app must follow this stepwise flow:
+  1. **Landing Page:**
+     - Dual video background (autoplay, smooth transitions)
+     - Company logo at the top
+     - Main heading and subheading centered
+     - Primary CTA button: "Start Building – Talk to me"
+     - Footer with copyright
+  2. **Pre-Chat Screen:**
+     - Logo remains at the top
+     - Centered button: "Let's chat"
+     - Footer remains
+  3. **Chat Interface:**
+     - Logo at the top
+     - Prominent agent avatar (with glow/animation)
+     - Microphone button (shows "Stop recording" when active, animated icon)
+     - (Mock) conversation/messages below
+
+## UI/UX Details
+- Branding and layout must remain consistent across all screens (logo always visible, centered content)
+- All transitions between screens must be smooth and animated (Framer Motion/Tailwind)
+- The microphone button must clearly indicate its state (recording, idle, etc.) with animation
+- The agent avatar should be visually central and animated in the chat interface
+- Use minimal, modern, and clean design as seen in the reference
+- All text, button labels, and layout should match the reference exactly
+- No extra screens or steps beyond those in the reference
+
+## Implementation Notes
+- Always refer to these rules and the reference UI for any design or flow decisions
+- Prioritize matching the reference over adding new features or customizations
