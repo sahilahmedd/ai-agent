@@ -23,6 +23,17 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ templateConfig }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
+  // Restore simple toggle logic
+  const handleToggleRecording = () => {
+    setIsRecording((r) => !r);
+    setIsMuted(false);
+  };
+
+  const handleToggleMute = () => {
+    setIsMuted((m) => !m);
+    setIsRecording(false);
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -120,8 +131,8 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ templateConfig }) => {
               setAgentSpeaking={setAgentSpeaking}
               isRecording={isRecording}
               isMuted={isMuted}
-              onToggleRecording={() => setIsRecording((r) => !r)}
-              onToggleMute={() => setIsMuted((m) => !m)}
+              onToggleRecording={handleToggleRecording}
+              onToggleMute={handleToggleMute}
             />
           </div>
         </motion.div>
