@@ -1,69 +1,68 @@
-# React + TypeScript + Vite
+# Amplitech AI Agent Chat App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive chat application built with React, Vite, and TypeScript. Features a template-driven system, video backgrounds, smooth framer-motion animations, and a mock voice UI. Designed for rapid prototyping and beautiful UX on both desktop and mobile.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Landing Page:**
+  - Dual video autoplay with smooth fade transitions
+  - Animated heading, subheading, and logo (framer-motion)
+  - Pill-shaped blue CTA buttons
+  - Responsive layout for all devices
+- **Chat Window:**
+  - Animated agent avatar with glowing effect
+  - Header with logo and close/back button
+  - Fullscreen, mobile-friendly layout
+  - Mock conversation with user/assistant roles
+  - Microphone button with mock voice UI states (recording, mute, speaking)
+  - Scroll-to-bottom and loading animation for streaming messages
+- **Configurable:**
+  - All content and styles driven by a template config (`src/config/templates/template1.ts`)
+- **Tech Stack:**
+  - React + Vite + TypeScript
+  - Tailwind CSS v4 (no config file required)
+  - framer-motion for smooth UI transitions
+  - Redux Toolkit for state management
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Install dependencies:**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2. **Run the development server:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Open your browser:**
+   Visit [http://localhost:5173](http://localhost:5173) to view the app.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `src/components/` — UI components (LandingPage, ChatWindow, Conversation, etc.)
+- `src/config/templates/template1.ts` — Template-driven content and styles
+- `src/store/` — Redux slices and store setup
+- `src/types/Template.ts` — TypeScript interfaces for template config
+
+## Customization
+
+- Update `src/config/templates/template1.ts` to change branding, videos, colors, and text.
+- Modify components in `src/components/` for further UI/UX tweaks.
+
+## Notes
+
+- Tailwind CSS v4 is used with default settings (no config file required).
+- Voice UI is mock-only; no real audio is sent or received.
+- All animations use framer-motion for smooth transitions.
+
+## License
+
+MIT

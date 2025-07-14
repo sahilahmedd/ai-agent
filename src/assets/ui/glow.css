@@ -1,0 +1,58 @@
+.animate-glow {
+  animation: avatar-glow 2.5s infinite alternate;
+  box-shadow: 0 0 60px 30px rgba(133, 88, 242, 0.25),
+    0 0 120px 60px rgba(133, 88, 242, 0.15);
+}
+
+@keyframes avatar-glow {
+  0% {
+    box-shadow: 0 0 60px 30px rgba(133, 88, 242, 0.25),
+      0 0 120px 60px rgba(133, 88, 242, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 90px 45px rgba(133, 88, 242, 0.35),
+      0 0 160px 80px rgba(205, 184, 254, 0.18);
+  }
+}
+
+.animate-pink-shadow {
+  animation: pink-shadow 2.5s infinite alternate;
+  box-shadow: 0 0 40px 20px rgba(205, 184, 254, 0.18);
+}
+
+@keyframes pink-shadow {
+  0% {
+    box-shadow: 0 0 40px 20px rgba(205, 184, 254, 0.18);
+  }
+  100% {
+    box-shadow: 0 0 80px 40px rgba(205, 184, 254, 0.28);
+  }
+}
+
+/* Breathing glow animation for avatar and mic button */
+.breathing-glow {
+  animation: breathing-glow 2.2s ease-in-out infinite;
+}
+
+@keyframes breathing-glow {
+  0% {
+    box-shadow: 0 0 32px 8px rgba(133, 88, 242, 0.18);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 48px 16px rgba(133, 88, 242, 0.32);
+    transform: scale(1.06);
+  }
+  100% {
+    box-shadow: 0 0 32px 8px rgba(133, 88, 242, 0.18);
+    transform: scale(1);
+  }
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -1,78 +1,203 @@
-# Cursor Rules for AI Agent Project
+Hi Sahil,
+I hope this email finds you well. I'm reaching out with an exciting frontend development opportunity for you. We need a skilled React developer to create a modern AI agent experience application within a 3-hour timeframe.
+📌 Project Overview
+Build a modern, responsive React application simulating an AI agent experience. The interface includes dual video backgrounds, animated transitions, and a chat UI — using mock data, with focus on smooth UX and clear structure.
 
-## Tech Stack
-- Use React 19 + TypeScript (with Vite) as the base framework.
-- Use Tailwind CSS for styling and layout.
-- Use Redux Toolkit for state management.
-- Use React Router DOM for routing.
-- Use Framer Motion for animations.
-- Use React Icons for iconography.
+🔧 Technology Stack
+React 19 + TypeScript (with Vite)
 
-## Folder Structure
-- Follow the structure:
-  - src/components/ui/ for reusable UI components
-  - src/components/LandingPage.tsx for the landing screen
-  - src/components/ChatWindow.tsx for the main agent interface
-  - src/components/Conversation.tsx for chat message display
-  - src/config/templates/ for template configurations
-  - src/store/appSlice.ts and conversationSlice.ts for Redux slices
-  - src/types/Template.ts and Message.ts for type definitions
-  - src/assets/videos/, images/, logos/ for assets
+Tailwind CSS (for styling and layout)
 
-## Coding Standards
-- Use TypeScript for all code.
-- Keep code modular, clean, and extensible.
-- Use mock data only (no real chat/voice logic).
-- Emphasize animation polish and responsiveness.
-- Separate style and content via template config files.
-- Ensure all components are mobile-first and responsive.
-- Avoid console warnings and TypeScript errors.
+Redux Toolkit (for state management)
 
-## Success Criteria
-- App compiles with no TypeScript errors.
-- Landing page and chat page are functional.
-- Animations are smooth (Framer Motion).
-- Mobile responsiveness is verified.
-- Voice UI states (mock) are working.
-- Video transitions and routing function correctly.
-- No console warnings or crashes.
+React Router DOM (routing)
 
-## Developer Notes
-- Focus on user journey: video → chat → interaction flow.
-- Use mock data for all agent/chat/voice features.
-- Reference https://agent.amplitech.ai/97aa9640-6164-468b-8a21-116a9e82202c for sample assets and UI inspiration.
-- README.md must include clear setup instructions (Vite, install, run).
-- Push the full project to GitHub and provide a screen recording walkthrough upon completion.
+Framer Motion (animations)
 
-# Additional Cursor Rules: Reference UI Flow and Details
+React Icons (iconography)
 
-## UI Flow (Match Reference Exactly)
-- The app must follow this stepwise flow:
-  1. **Landing Page:**
-     - Dual video background (autoplay, smooth transitions)
-     - Company logo at the top
-     - Main heading and subheading centered
-     - Primary CTA button: "Start Building – Talk to me"
-     - Footer with copyright
-  2. **Pre-Chat Screen:**
-     - Logo remains at the top
-     - Centered button: "Let's chat"
-     - Footer remains
-  3. **Chat Interface:**
-     - Logo at the top
-     - Prominent agent avatar (with glow/animation)
-     - Microphone button (shows "Stop recording" when active, animated icon)
-     - (Mock) conversation/messages below
+📁 Folder Structure
+src/
+├── components/
+│   ├── ui/                  # Reusable UI components
+│   ├── LandingPage.tsx      # Video-based landing screen
+│   ├── ChatWindow.tsx       # Main agent interface
+│   └── Conversation.tsx     # Chat message display
+├── config/
+│   └── templates/           # Template configurations
+├── store/
+│   ├── appSlice.ts
+│   └── conversationSlice.ts
+├── types/
+│   ├── Template.ts
+│   └── Message.ts
+├── assets/
+│   └── videos/, images/, logos/
+└── App.tsx
+⏱️ 3-Hour Task Breakdown
+🕐 Hour 1: Setup & Core Config
+1.1 Project Initialization (15 mins)
 
-## UI/UX Details
-- Branding and layout must remain consistent across all screens (logo always visible, centered content)
-- All transitions between screens must be smooth and animated (Framer Motion/Tailwind)
-- The microphone button must clearly indicate its state (recording, idle, etc.) with animation
-- The agent avatar should be visually central and animated in the chat interface
-- Use minimal, modern, and clean design as seen in the reference
-- All text, button labels, and layout should match the reference exactly
-- No extra screens or steps beyond those in the reference
+Vite + React + TypeScript setup
 
-## Implementation Notes
-- Always refer to these rules and the reference UI for any design or flow decisions
-- Prioritize matching the reference over adding new features or customizations
+Tailwind CSS config + custom animations
+
+Install dependencies
+
+1.2 Type Definitions (15 mins)
+
+TemplateContent and TemplateStylesin types/Template.ts
+
+1.3 Redux Store Setup (15 mins)
+
+appSlice.ts: agent data, user state
+
+conversationSlice.ts: UI state (speaking, mute)
+
+Configure and export store
+
+1.4 Template Config (15 mins)
+
+template1.ts with mock data, videos, text, colors, styles
+
+🕑 Hour 2: Landing Page + UI Components
+2.1 LandingPage (30 mins)
+
+Dual video autoplay with fade transition
+
+Animated heading/subheading + logo
+
+CTA buttons trigger video change & route to /agent
+
+Framer Motion animations
+
+Responsive layout
+
+2.2 UI Components (15 mins)
+
+AnimatedButton.tsx, SolidButton.tsx, Loader.tsx
+
+2.3 Routing Setup (15 mins)
+
+/:agentId → Landing Page
+
+/:agentId/agent → Chat Window
+
+Default route redirect to /raisa
+
+🕒 Hour 3: Chat Interface & Conversation Logic
+3.1 ChatWindow (30 mins)
+
+Avatar with glowing animation
+
+Header with logo + close/back button
+
+Fullscreen responsive layout
+
+Support for embedded mode
+
+3.2 Conversation Component (20 mins)
+
+Display mock messages (user/assistant roles)
+
+Microphone icon (fake states: recording, mute, speaking)
+
+Scroll-to-bottom + loading animation
+
+3.3 Final Polish (10 mins)
+
+Responsive tests
+
+Error handling (video fallback, undefined states)
+
+Framer Motion transitions
+
+📂 Sample
+
+Reference  - https://agent.amplitech.ai/97aa9640-6164-468b-8a21-116a9e82202c 
+(You can get assets from this URL itself. Consider this as template 1 ).
+
+You can create template 2 by your choice. 
+
+🔍 Key Features
+✔️ Landing Page
+Dual video autoplay + smooth transition
+
+Animated heading/subheading
+
+Company logo
+
+Responsive + mobile-first layout
+
+✔️ Chat Interface
+Avatar glow animation
+
+Mock message bubbles
+
+Microphone UI with visual states
+
+Responsive layout and back/close behavior
+
+✔️ Template System
+Style + content separation via template1.ts
+
+Customizable via TemplateContent and TemplateStyles
+
+🚀 Success Criteria
+✅ App compiles with no TypeScript errors
+
+✅ Landing page + chat page functional
+
+✅ Animations smooth (Framer Motion)
+
+✅ Mobile responsiveness verified
+
+✅ Voice UI states working (mock)
+
+✅ Video transitions and routing function correctly
+
+✅ No console warnings or crashes
+
+📌 Developer Notes
+Use mock data only — no voice processing or real chat logic required.
+
+Emphasize animation polish and responsiveness.
+
+Keep code clean, modular, and extensible.
+
+Focus on user journey: video → chat → interaction flow.
+
+Please make sure to share the following upon completion:
+
+✅ GitHub Repository
+
+Push the full working project to a public or private GitHub repo
+
+Include a clear README.md with setup instructions (Vite, install, run)
+
+✅ Screen Recording
+
+Record a 2–4 minute walkthroughof the app showcasing:
+
+Landing page experience with dual video background
+
+Transition into chat interface
+
+Chat UI features, animations, and responsiveness
+
+Use any screen recorder (Loom, OBS, etc.)
+
+Share the video link or upload with delivery
+
+🔁 This ensures we can verify the full user experience quickly without needing to run locally.
+
+
+
+I'm excited to see what you create! This is a great opportunity to showcase your React skills and build something truly engaging. 
+
+I would expect you to share by 10 PM Today.
+
+Best regards,
+
+Saket
+

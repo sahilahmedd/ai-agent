@@ -1,9 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
-const videoUrl = "/videos/Raisa-Intro-video-2.mp4";
-const logoUrl = "/images/amplitech-logo.svg";
+import { templateContent } from "../config/templates/template1";
 
 export default function PreChatPage() {
   const navigate = useNavigate();
@@ -12,17 +9,17 @@ export default function PreChatPage() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-screen h-full object-cover z-0"
-        src={videoUrl}
+        src={templateContent.introVideo2}
         autoPlay
-        loop
         playsInline
+        onEnded={() => navigate("/chat")}
       />
       {/* Overlay Content */}
       <div className="relative z-20 w-full flex flex-col min-h-screen">
         {/* Logo */}
         <div className="flex justify-center pt-10 md:pt-14 pb-2">
           <motion.img
-            src={logoUrl}
+            src={templateContent.companyLogo}
             alt="Amplitech.ai Logo"
             className="h-7 md:h-9"
             initial={{ opacity: 0, y: -30 }}
@@ -39,9 +36,9 @@ export default function PreChatPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            onClick={() => navigate("/chat")}
+            onClick={() => navigate("/agent")}
           >
-            Let’s chat
+            {templateContent.button2Text}
           </motion.button>
         </div>
         {/* Footer */}
