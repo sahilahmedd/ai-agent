@@ -9,7 +9,6 @@ export function Conversation({
   isRecording,
   isMuted,
   onToggleRecording,
-  onToggleMute,
 }: {
   isAgentSpeaking: boolean;
   setAgentSpeaking: (val: boolean) => void;
@@ -51,28 +50,8 @@ export function Conversation({
   }, [typedText]);
 
   // Microphone permission handler
-  const handleRecordClick = async () => {
-    console.log(
-      "Clicked record button. isRecording:",
-      isRecording,
-      "isMuted:",
-      isMuted
-    );
-    if (!isRecording && !isMuted) {
-      console.log("Trying to start recording");
-      try {
-        await navigator.mediaDevices.getUserMedia({ audio: true });
-        onToggleRecording();
-      } catch (err) {
-        alert("Microphone access denied or unavailable.");
-      }
-    } else if (isRecording) {
-      console.log("Switching to muted");
-      onToggleMute();
-    } else if (isMuted) {
-      console.log("Switching to recording");
-      onToggleRecording();
-    }
+  const handleRecordClick = () => {
+    onToggleRecording();
   };
 
   return (

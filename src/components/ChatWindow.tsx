@@ -23,12 +23,28 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ templateConfig }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
-  // Restore simple toggle logic
-  const handleToggleRecording = () => {
-    setIsRecording((r) => !r);
-    setIsMuted(false);
+  // Cycle logic: idle → recording → muted → idle
+  const handleToggleRecording = async () => {
+    if (!isRecording && !isMuted) {
+      // Attempt to start recording and request mic access
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        setIsRecording(true);
+        setIsMuted(false);
+      } catch (err) {
+        alert("Microphone access denied or unavailable.");
+      }
+    } else if (isRecording) {
+      // Stop recording, go to muted
+      setIsRecording(false);
+      setIsMuted(true);
+    } else if (isMuted) {
+      // Back to idle
+      setIsMuted(false);
+      setIsRecording(false);
+    }
   };
-
+  
   const handleToggleMute = () => {
     setIsMuted((m) => !m);
     setIsRecording(false);
@@ -46,8 +62,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ templateConfig }) => {
         //   alt="Background"
           className="absolute inset-0 w-full h-full object-cover z-0"
         /> */}
-        {/* Dark overlay for contrast */}
-        <div className="absolute inset-0 w-full h-full   z-10 p-24" />
+       
         {/* Centered chat card content */}
         <motion.div
           className={`
